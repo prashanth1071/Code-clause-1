@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Unit Conversion</title>
+    <link rel="stylesheet" type="text/css" href="https://dohliam.github.io/dropin-minimal-css/min/milligram.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="prashanth.js">//</script>
+    <script src="prashanth2.js/prashanth2.js">//</script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 50%;
+            font-family: 'Poppins', sans-serif;
+            background-color: blueviolet;
+            color:rgb(24, 255, 254);
+            width: 50%;
+        }
+       
+    </style>
+  </head>
+
+  <body>
+
+    <h1>Unit Conversion</h1>
+
+    <select id="grpSelect" onchange="grpSwitch()">
+      <option value="grpTime">Time</option>
+      <option value="grpLength">Length</option>
+      <option value="grpTemperature">Temperature</option>
+      <option value="grpIT">IT</option>
+    </select>
+
+      <div id="grpTime" style="display: none;">
+        <h3>Time</h3>
+      <input type="number" value="1" min="1" id="timeamt" onkeyup="convUnits('time')">
+      from <select id="timefr" onchange="convUnits('time')">
+        <option value="uMs">ms</option>
+        <option value="uSec">sec</option>
+        <option value="uMin">min</option>
+        <option SELECTED value="uHr">hr</option>
+        <option value="uDay">day</option>
+        <option value="uWk">wk</option>
+        <option value="uMo">mo</option>
+        <option value="uYr">yr</option>
+        <option value="uDec">dec</option>
+        <option value="uC">c</option>
+      </select>
+      to <select id="timeto" onchange="convUnits('time')">
+        <option value="uMs">ms</option>
+        <option SELECTED value="uSec">sec</option>
+        <option value="uMin">min</option>
+        <option value="uHr">hr</option>
+        <option value="uDay">day</option>
+        <option value="uWk">wk</option>
+        <option value="uMo">mo</option>
+        <option value="uYr">yr</option>
+        <option value="uDec">dec</option>
+        <option value="uC">c</option>
+      </select>
+      <input id="timeBtn" type="button" value="convert" onclick="convUnits('time');">
+      </div>
+
+      <div id="grpLength" style="display:none;">
+        <h3>Length</h3>
+        <input type="number" value="1" min="1" id="lgthamt" onkeyup="convUnits('lgth')">
+        from <select id="lgthfr" onchange="convUnits('lgth')">
+          <option>==Metric==</option>
+          <option value="uMm">mm</option>
+          <option value="uCm">cm</option>
+          <option value="uM">m</option>
+          <option>==Imperial==</option>
+          <option SELECTED value="uIn">in</option>
+          <option value="uFt">ft</option>
+          <option value="uYd">yd</option>
+          <option value="uMi">mi</option>
+        </select>
+        to <select id="lgthto" onchange="convUnits('lgth')">
+          <option>==Metric==</option>
+          <option value="uMm">mm</option>
+          <option SELECTED value="uCm">cm</option>
+          <option value="uM">m</option>
+          <option>==Imperial==</option>
+          <option value="uIn">in</option>
+          <option value="uFt">ft</option>
+          <option value="uYd">yd</option>
+          <option value="uMi">mi</option>
+        </select>
+      <input id="lgthBtn" type="button" value="convert" onclick="convUnits('lgth');">
+      </div>
+
+      <div id="grpTemperature" style="display:none;">
+        <h3>Temperature</h3>
+      <input type="number" value="1" id="tmpamt" onkeyup="convTmp()">
+      from <select id="tmpfr" onchange="convTmp()">
+        <option value="uDegc">°C</option>
+        <option SELECTED value="uDegf">°F</option>
+        <option value="uDegk">K</option>
+        <option value="uDegn">°N</option>
+      </select>
+      to <select id="tmpto" onchange="convTmp()">
+        <option SELECTED value="uDegc">°C</option>
+        <option value="uDegf">°F</option>
+        <option value="uDegk">K</option>
+        <option value="uDegn">°N</option>
+      </select>
+      <input id="tmpBtn" type="button" value="convert" onclick="convTmp();">
+      </div>
+
+      <div id="grpIT" style="display:none;">
+        <h3>IT</h3>
+      <input type="number" value="1" min="1" id="itamt" onkeyup="convUnits('it')">
+      from <select id="itfr" onchange="convUnits('it')">
+        <option value="uBit">bit</option>
+        <option value="uByte">byte</option>
+        <option value="uKb">KB</option>
+        <option SELECTED value="uMb">MB</option>
+        <option value="uGb">GB</option>
+        <option value="uTb">TB</option>
+      </select>
+      to <select id="itto" onchange="convUnits('it')">
+        <option value="uBit">bit</option>
+        <option value="uByte">byte</option>
+        <option SELECTED value="uKb">KB</option>
+        <option value="uMb">MB</option>
+        <option value="uGb">GB</option>
+        <option value="uTb">TB</option>
+      </select>
+      <input id="itBtn" type="button" value="convert" onclick="convUnits('it');">
+      </div>
+
+
+
+    <div id="result" style="display:none;">
+      <h3>Result:</h3>
+      <div id="result">&nbsp;</div>
+
+      <br>
+      <br>
+      <div id="resulttable">&nbsp;</div>
+    </div>
+
+  </body>
+</html>
